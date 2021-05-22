@@ -1,5 +1,23 @@
-let userTask = document.getElementById("task_name");
-let submitButton = document.getElementById("submit_button");
-let taskList = document.getElementById("task_list");
+let userTask = document.getElementById('task_name');
+let taskList = document.getElementById('tasks__list');
+let tasks = document.getElementsByTagName('li');
 
-taskList.appendChild("<li>lol</li>");
+function createTask () {
+    let taskValue = document.getElementById('task_name').value;
+    let newTask = document.createElement('li');
+    newTask.innerText = taskValue;
+    
+taskList.appendChild(newTask)
+}
+
+
+let submitButton = document.getElementById('submit_button');
+let clearButton =  document.getElementById('clear_button');
+
+
+function deleteTasks() {
+    taskList.removeChild(tasks);
+}
+
+submitButton.addEventListener('click',createTask);
+clearButton.addEventListener('click',deleteTasks);
