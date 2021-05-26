@@ -1,20 +1,19 @@
 let userTask = document.getElementById('task_name');
 let taskList = document.getElementById('tasks__list');
 let tasks = document.getElementsByTagName('li');
+let buttonDone = document.getElementsByClassName('done');
+let buttonDelete = document.getElementsByClassName('delete');
 
-
-
+// create button done and delete when creating à task
 function creatTaskButtons(list) {
-    let btnDone = document.createElement("BUTTON");
-    btnDone.innerHTML = "Done";
-    list.appendChild(btnDone);
+    let btnArray = ['Delete', 'Done']
+    for (let i = 0; i < btnArray.length; i++) {
 
-    let btnDelete = document.createElement("BUTTON");
-    btnDelete.innerHTML = "Delete";
-    list.appendChild(btnDelete);
+        let btn = document.createElement("BUTTON");
+        btn.innerHTML = btnArray[i];
+        list.appendChild(btn);
+    }
   }
-
-
 
 function createTask () {
     let taskValue = document.getElementById('task_name').value;

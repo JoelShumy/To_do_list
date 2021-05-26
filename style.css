@@ -20,3 +20,7 @@ body {
 h1 {
     margin-bottom: 10%;
 }
+
+.done {
+    text-decoration: line-through;
+}
